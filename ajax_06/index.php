@@ -12,16 +12,18 @@ include_once "base.php";
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>我的店</title>
   <link rel="stylesheet" href="style.css">
+  <script src="jquery-2.1.4.min.js"></script>
 </head>
 <body>
+<h1 style="text-align:center"><?=date("Y-m-d H:i:s");?></h1>
 <div class="wrap">
   <div id="header">
     <!--插入導覽列檔案-->
-    <?php include_once "nav.php" ;?>
+    <div id="nav"><?php include_once "nav.php" ;?></div>
     <div id="banner"></div>
   </div>
     <!--插入左側選單檔案-->
-    <?php include "sidebar.php" ;?>
+    <div id="sidebar"> <?php include "sidebar.php" ;?></div>
   <div id="content">
   <?php
     //判斷是否有GET 變數 do 存在並設定$do的值
@@ -57,3 +59,11 @@ include_once "base.php";
 </div>  
 </body>
 </html>
+<script>
+//寫一個function可以在content中載入頁面內容，取代iframe的功能
+
+function loadpage(url){
+  $("#content").load(url);
+}
+
+</script>

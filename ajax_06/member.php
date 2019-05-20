@@ -1,5 +1,5 @@
 <?php
-  
+  include_once "base.php";
 //判斷是否為登入成功的狀態
   if(empty($_SESSION['login'])){
 

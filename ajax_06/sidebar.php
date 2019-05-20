@@ -1,5 +1,5 @@
 <!---左側選單欄--->
-<div id="sidebar">
+<?php include_once "base.php";?>
 <?php
 //利用session內的使用者帳號來取出使用者的資料
 if(!empty($_SESSION['user'])){
@@ -27,4 +27,3 @@ if(!empty($_SESSION['user'])){
       echo (in_array(6,$pr))?"<li>生活留影</li>":"";
       ?>      
     </ul>
-  </div>

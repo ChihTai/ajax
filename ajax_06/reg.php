@@ -66,7 +66,7 @@
     <tr>
       <td>帳號</td>
       <td>
-        <input type="text" name="acc" id="acc">
+        <input type="text" name="acc" id="acc" value="">
         <p class="errmeg">
         <?php
         
@@ -81,7 +81,7 @@
     </tr>
     <tr>
       <td>密碼</td>
-      <td><input type="password" name="pw" id="pw">
+      <td><input type="password" name="pw" id="pw" value="">
       <p class="errmeg">
         <?php
           if(!empty($pwErr)){
@@ -96,7 +96,7 @@
 
       </td>
       <td>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" value="">
         <p class="errmeg">
           <?php
             if(!empty($nameErr)){
