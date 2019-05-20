@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax-04-axios</title>
+  <!-----引入axios函式庫------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+  <h1></h1>
+  <h4></h4>
+  <ul></ul>
+</body>
+</html>
+<script>
+  //https://kktix.com/events.json
+
+//使用.get方法並將請求服務的網址填入函式中
+axios.get('')
+.then(function(response){
+
+  //在h1的標籤內寫入標題
+
+
+  //在h4的標籤內寫入更新時間
+
+
+  //先建立一個空字串
+
+
+  //以迴圈方式逐一處理物件entry的每個元素
+
+   
+  //在<ul>標籤內顯示累加後的字串內容
+
+})
+.catch(function(err){
+  //如果需要處理錯誤資訊，將錯誤丟到這個函式內處理
+});
+
+</script>

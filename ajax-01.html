@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax-01-XMLHttpRequest</title>
+</head>
+<body>
+  <h1></h1>
+  <h4></h4>
+  <ul></ul>
+</body>
+</html>
+<script>
+//https://kktix.com/events.json
+
+var xhr=new XMLHttpRequest
+
+xhr.open("","");
+
+xhr.onload=function(){
+
+  var type=xhr.getResponseHeader("Content-Type");
+  var response=xhr.responseText;
+  
+    //在h1的標籤內寫入標題
+    
+
+    //在h4的標籤內寫入更新時間
+    
+
+    //先建立一個空字串
+    
+
+    //以迴圈方式逐一處理物件entry的每個元素    
+    
+    
+    //在<ul>標籤內顯示累加後的字串內容
+}
+
+//傳送請求
+xhr.send();
+
+
+</script>
