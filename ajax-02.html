@@ -19,21 +19,34 @@
 <script>
   //https://kktix.com/events.json
   
-  $.get('', function (result) {
+  $.get('https://kktix.com/events.json', function(data) {
+    console.log(data)
     
-    //在h1的標籤內寫入標題
-    
+    $("h1").html(data.title);
+    //document.getElementsByTagName("h1")[0].innerHTML=data.title;
 
     //在h4的標籤內寫入更新時間
-    
-
+    $("h4").html(data.updated);
+    //document.querySelector("h4").innerHTML=data.updated;
     //先建立一個空字串
-    
+    var list="";    
 
     //以迴圈方式逐一處理物件entry的每個元素    
-    
+    /* data.entry.forEach(function(element){
+        list=list+`<li>${element.title} - 
+                      <a href='${element.url}'>活動網址</a>
+                   </li>`;
+    }); */
+
+    for(var i=0;i<data.entry.length;i++){
+      list=list+`<li>${data.entry[i].title} - 
+                      <a href='${data.entry[i].url}'>活動網址</a>
+                   </li>`;
+    }
     
     //在<ul>標籤內顯示累加後的字串內容
+      $("ul").html(list);
+      //document.querySelector("ul").innerHTML=list;
     
 
   }) 

@@ -17,26 +17,40 @@
 
 var xhr=new XMLHttpRequest
 
-xhr.open("","");
+xhr.open("GET","https://kktix.com/events.json");
 
 xhr.onload=function(){
 
   var type=xhr.getResponseHeader("Content-Type");
+  var status=xhr.status;
   var response=xhr.responseText;
-  
+   // console.log(response);
+    var data=JSON.parse(response);
+    console.log(data);
     //在h1的標籤內寫入標題
-    
+    document.getElementsByTagName("h1")[0].innerHTML=data.title;
 
     //在h4的標籤內寫入更新時間
-    
-
+    document.querySelector("h4").innerHTML=data.updated;
     //先建立一個空字串
-    
+    var list="";    
 
     //以迴圈方式逐一處理物件entry的每個元素    
-    
+    /* data.entry.forEach(function(element){
+        list=list+`<li>${element.title} - 
+                      <a href='${element.url}'>活動網址</a>
+                   </li>`;
+    }); */
+
+    for(var i=0;i<data.entry.length;i++){
+      list=list+`<li>${data.entry[i].title} - 
+                      <a href='${data.entry[i].url}'>活動網址</a>
+                   </li>`;
+    }
     
     //在<ul>標籤內顯示累加後的字串內容
+      document.querySelector("ul").innerHTML=list;
+
 }
 
 //傳送請求

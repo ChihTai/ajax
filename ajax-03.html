@@ -16,29 +16,44 @@
   //https://kktix.com/events.json
 
 //將請求服務的網址及方法填入函式中
-fetch('',{
-  method:"",
+fetch('https://kktix.com/events.json',{
+  method:"get",
 })
 .then(function(response){
   //第一個then處理回應的內容或狀態判斷。然後回傳處理後的資料內容
-  
+  console.log(response.status)
+  return response.json();
+
 })
 .then(function(data){
   //第二個then處理實際的資料內容
 
   //在h1的標籤內寫入標題
   
+  document.getElementsByTagName("h1")[0].innerHTML=data.title;
 
-  //在h4的標籤內寫入更新時間
+    //在h4的標籤內寫入更新時間
   
+    document.querySelector("h4").innerHTML=data.updated;
+    //先建立一個空字串
+    var list="";    
 
-  //先建立一個空字串
-  
+    //以迴圈方式逐一處理物件entry的每個元素    
+    /* data.entry.forEach(function(element){
+        list=list+`<li>${element.title} - 
+                      <a href='${element.url}'>活動網址</a>
+                   </li>`;
+    }); */
 
-  //以迴圈方式逐一處理物件entry的每個元素
-  
+    for(var i=0;i<data.entry.length;i++){
+      list=list+`<li>${data.entry[i].title} - 
+                      <a href='${data.entry[i].url}'>活動網址</a>
+                   </li>`;
+    }
     
     //在<ul>標籤內顯示累加後的字串內容
+      
+      document.querySelector("ul").innerHTML=list;
   
 })
 .catch(function(err){
