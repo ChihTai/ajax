@@ -37,12 +37,12 @@ function login(){
     switch(res){
       case "1":
         loadpage("admin.php");
-        $("#nav").load("nav.php");
+        getmenu();
         $("#sidebar").load("sidebar.php");
       break;
       case "2":
         loadpage("member.php");
-        $("#nav").load("nav.php");
+        getmenu();
         $("#sidebar").load("sidebar.php");
       break;
       case "3":
